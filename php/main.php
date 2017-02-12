@@ -2,16 +2,17 @@
 	$ip = $_POST['name'];
 	$port = 80;
 	$waitTimeoutInSeconds = 1;
+		
 	if($fp = fsockopen($ip, $port, $errCode, $errStr, $waitTimeoutInSeconds)) {
-		$flag = true;
+		$flag = 1;
 	}
 	else {
-		$flag = false;
+		$flag = 0;
 	}
 	fclose($fp);
 	
 	print('<script> var divColor =  '.$flag.' </script>');
-	if($flag == true) {
+	if($flag == 1) {
 		$sysDescr = snmpget($ip, 'public', '.1.3.6.1.2.1.1.1.0', 300);
 		echo $sysDescr.'<br/>';
 		$sysName = snmpget($ip, 'public', '.1.3.6.1.2.1.1.5.0', 300);
