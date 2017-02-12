@@ -11,12 +11,20 @@
     <div id="mainForm">
     
     <form method="post" id="inputIp" action="javascript:void(null);" onsubmit="call()">
-        Input IP <input id="name" name="name" value="" type="text" /><input value="check" type="submit"/>
+        Input IP <input id="name" name="name" value="" type="text" /><input value="check" type="submit" />
     </form>
     
     <script type="text/javascript" language="javascript">
+	
+
 	function call()
     {
+		var txt = document.getElementById('name').value;
+		if(txt == '') {
+			$("#snmp_info").text('Вы забыли ввести ip-адрес!').css("background-color","#DC801A");
+			return false;
+		}   
+
         var msg = $("#inputIp").serialize();
             $.ajax({
                 type: 'POST',
@@ -45,12 +53,11 @@
 	//var divColor = '<?php echo $flag ?>'; 
     function colorIt()
 	{
-		//var divColor = '<?php echo $flag ?>';
 		alert(divColor);
 		if (divColor == false) {
             $("#snmp_info").css("background-color","#C00");
         }
-		else if(divColor == '') {
+		else if(divColor == undefined) {
 			$("#snmp_info").css("background-color","#C00");
 		}
     //Если переменная содержит какое-то значение, то ячейка окрашивается в зелёный
