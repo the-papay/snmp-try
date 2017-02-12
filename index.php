@@ -9,14 +9,10 @@
 <script type="text/javascript" src="script/jquery-3.1.1.js"></script>
 <body>
     <div id="mainForm">
-    
     <form method="post" id="inputIp" action="javascript:void(null);" onsubmit="call()">
         Input IP <input id="name" name="name" value="" type="text" /><input value="check" type="submit" />
     </form>
-    
     <script type="text/javascript" language="javascript">
-	
-
 	function call()
     {
 		var txt = document.getElementById('name').value;
@@ -41,6 +37,7 @@
     }
     </script>
     </div>
+    
     <!-- Форма отправки данных с помощью ajax на определённый div -->
     <div id="snmp_info">
     <?php

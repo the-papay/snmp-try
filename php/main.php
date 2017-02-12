@@ -10,10 +10,7 @@
 		$flag = 0;
 	}
 	fclose($fp);
-		
-	if(empty($flag)) {
-		print('<script> var divColor =  0; </script>');
-	}
+	
 	print('<script> var divColor =  '.$flag.' </script>');
 	if($flag == 1) {
 		$sysDescr = snmpget($ip, 'public', '.1.3.6.1.2.1.1.1.0', 300);
