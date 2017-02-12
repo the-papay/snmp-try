@@ -1,0 +1,25 @@
+div {
+	border:solid #009;
+}
+#mainForm {
+	width:100%;
+;
+}
+#snmp_info {
+	width:55%;
+	float:left;
+/*	background-color:#C00; */
+}
+#ip_config {
+	width:15%;
+	float:right;
+}
+#id1 {
+width:10%;
+}
+#id2 {
+width:10%;
+}
+#id3 {
+width:10%;
+}
